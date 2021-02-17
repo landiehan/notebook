@@ -126,6 +126,8 @@ app.get('/monsters/:name', (req, res, next) => {
 
 Express会解析（parse）任何的 parameters，抽取他们的实际值，把这个实际值加到一个object里面：`req.params` 。key就是parameter在route里面定义的名字（即：`/:xxx`，这个xxx），value就是来自request的实际值。
 
+> params是string，比如：`app.get('/users/:userId')`，当request是`/users/100`的时候，req.params是`{ userId: '100' }`。因为path就是一个string嘛。
+
 ## [7/15] 设置状态码
 
 默认情况下，`res.send()`会发送一个`200 OK`的状态码。
